@@ -8,11 +8,13 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Social Media Canvas') }}</title>
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
-
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -36,7 +38,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        {{ config('app.name', 'Social Media Cannvas') }}
                     </a>
                 </div>
 
@@ -53,25 +55,20 @@
                             <li><a href="{{ url('/login') }}">Login</a></li>
                             <li><a href="{{ url('/register') }}">Register</a></li>
                         @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ url('/logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
+                            <li>
+                                <a href="#" ><i class="glyphicon glyphicon-cog" id="bt-sair"></i></a>
                             </li>
+
+                            <li>
+                                <a href="{{ url('/logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="glyphicon glyphicon-log-out" id="bt-sair"></i></a>
+                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                </form>
+
+                            </li>
+                            
+
+                            
                         @endif
                     </ul>
                 </div>
