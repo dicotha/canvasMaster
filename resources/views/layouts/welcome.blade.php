@@ -40,7 +40,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Social Media Canvas</a>
+      <a class="navbar-brand" href="/">Social Media Canvas</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
