@@ -40,7 +40,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Login dropdown</a>
+      <a class="navbar-brand" href="#">Social Media Canvas</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -48,7 +48,7 @@
       
       
       <ul class="nav navbar-nav navbar-right">
-        <li><p class="navbar-text">Already have an account?</p></li>
+        <li><p class="navbar-text">Já tem uma conta? faça seu</p></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
             <ul id="login-dp" class="dropdown-menu">
@@ -67,7 +67,7 @@
                                     
 
                                     
-                                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus placeholder="Email">
 
                                         @if ($errors->has('email'))
                                             <span class="help-block">
@@ -81,7 +81,7 @@
                                     
 
                                     
-                                        <input id="password" type="password" class="form-control" name="password" required>
+                                        <input id="password" type="password" class="form-control" name="password" required placeholder="Senha">
 
                                         @if ($errors->has('password'))
                                             <span class="help-block">
@@ -94,7 +94,7 @@
                                 <div class="form-group" style="padding-left: 15px;padding-right: 15px;">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="remember"> Remember Me
+                                                <input type="checkbox" name="remember"> Lembrar
                                             </label>
                                         </div>
                                     
@@ -102,18 +102,18 @@
 
                                 <div class="form-group" style="padding-left: 15px;padding-right: 15px;">
                                         <button type="submit" class="btn btn-primary">
-                                            Login
+                                            Entrar
                                         </button>
 
                                         <a class="btn btn-link" href="{{ url('/password/reset') }}">
-                                            Forgot Your Password?
+                                            Esqueceu sua senha ?
                                         </a>
                                     
                                 </div>
                             </form>
                             </div>
                             <div class="bottom text-center">
-                                New here ? <a href="#"><b>Join Us</b></a>
+                                Novo aqui ? <a href="register"><b>Junte-se a nos</b></a>
                             </div>
                      </div>
                 </li>
