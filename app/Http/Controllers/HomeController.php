@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 class HomeController extends Controller
 {
     /**
@@ -25,4 +26,27 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function perfil(){
+
+        return view('perfil');
+    }
+
+    public function duvidas(){
+
+        return view('duvidas');
+    }
+
+    public function oquee(){
+
+        return view('oquee');
+    }
+    
+    public function sobre(){
+
+        return view('sobre');
+    }
+
+
+
 }

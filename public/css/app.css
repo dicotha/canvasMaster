@@ -7,3 +7,135 @@
  #bt-sair{
  	font-size:22px;
  }
+ .nome{
+    margin-top: 20px;
+    font-size: 18px;
+}
+.app{
+    background-color: #4479c6 !important;
+    border-color: #4479c6 !important;
+   }
+  
+.app {
+	color:#FFFFFF !important;
+}
+.app:hover {
+	color:#2B589A !important;
+}
+.app>li>a {
+	color:#FFFFFF !important;
+}
+.app>li>a:hover {
+	color:#2B589A !important;
+	background-color: transparent !important;
+}
+.menulateral{
+	padding-top: 20px;
+    margin-left: 20px;
+    font-size: 18px;
+}
+.navbar-brand {
+	padding-top:20px !important;
+}
+.menulateral>a{
+	color:#000000;
+	text-decoration: none;
+}
+.menulateral>a:hover{
+	color:#4479c6;
+	text-decoration: none;
+}
+.col-xs-15,
+.col-sm-15,
+.col-md-15,
+.col-lg-15 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 3px;
+    padding-left: 3px;
+}
+.col-xs-15 {
+    width: 20%;
+    float: left;
+}
+@media (min-width: 768px) {
+.col-sm-15 {
+        width: 20%;
+        float: left;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-15 {
+        width: 20%;
+        float: left;
+    }
+}
+@media (min-width: 1200px) {
+    .col-lg-15 {
+        width: 20%;
+        float: left;
+    }
+}
+
+
+.canvasColuna{
+	background-color:#f7f7f7 ;
+	
+}
+.board-title {
+    padding-left: 6px;
+    margin: 0;
+    color: #627383;
+    font-size: 12px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    border-left-width: 3px;
+    border-left-style: solid;
+}
+.board-title.red {
+    border-color: #C52A51;
+}
+
+.bodycanvas{
+	width: 100%;
+    height: 92%;
+    border-color: #f7f7f7;
+    background-color: #f7f7f7;
+}
+.caixatxtCanvas{
+	    border: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.post-it li{
+	list-style: none;
+    background-color: #fffa3c;
+    margin-left: -35px;
+    margin-right: 5px;
+}
+
+.post-it li p{
+	padding: 5px;
+    font-weight: bold;
+}
+
+@media (min-width: 768px){
+.modal-dialog {
+    width: 300px !important;
+}
+}
+
+.remover{
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+	padding: 3px;
+}
+
+.bodycanvas2 {
+    width: 100%;
+    height: 50%;
+    border-color: #f7f7f7;
+    background-color: #f7f7f7;
+}

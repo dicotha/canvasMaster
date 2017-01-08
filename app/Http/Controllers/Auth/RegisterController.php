@@ -101,6 +101,7 @@ class RegisterController extends Controller
                 'facebook_id' => $socialUser->getId(),
                 'name' => $socialUser->getName(),
                 'email' => $socialUser->getEmail(),
+                'avatar' => $socialUser->getAvatar(),
 
             ]);
         

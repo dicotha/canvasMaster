@@ -13,8 +13,12 @@
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+   
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
+ 
+
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -24,7 +28,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-static-top app">
             <div class="container">
                 <div class="navbar-header">
 
@@ -37,7 +41,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/home') }}">
+                    <a class="navbar-brand app" href="{{ url('/home') }}">
                         {{ config('app.name', 'Social Media Cannvas') }}
                     </a>
                 </div>
@@ -49,14 +53,14 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right app">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}">Login</a></li>
                             <li><a href="{{ url('/register') }}">Register</a></li>
                         @else
                             <li>
-                                <a href="#" ><i class="glyphicon glyphicon-cog" id="bt-sair"></i></a>
+                                <a href="{{ url('/perfil') }}" ><i class="glyphicon glyphicon-cog" id="bt-sair"></i></a>
                             </li>
 
                             <li>
@@ -78,7 +82,10 @@
         @yield('content')
     </div>
 
+
     <!-- Scripts -->
-    <script src="/js/app.js"></script>
+    <script src="/js/app.js">
+        
+    </script>
 </body>
 </html>
