@@ -24,6 +24,8 @@ Route::get('/oquee', 'HomeController@oquee');
 Route::get('/sobre', 'HomeController@sobre');
 Route::get('/novocanvas', 'CanvasController@novocanvas');
 Route::get('/salvacanvas', 'CanvasController@salvacanvas');
+Route::get('/updadecanvas', 'CanvasController@updadecanvas');
+Route::get('/deletecanvas', 'CanvasController@deletecanvas');
 Route::post('/perfil', 'perfil@updadeAvatar');
 
 

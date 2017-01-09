@@ -37,31 +37,59 @@
 
            <?php  
                 
-                $servername = "localhost";
-                $username = "root";
-                $password = "";
-                $dbname = "canvasmaster";
+                $servername = 'localhost';
+                $username = 'root';
+                $password = '';
+                $dbname = 'canvasmaster';
+                
+              
+                $userid = Auth::id();
+       
 
 
-                    
+                $conn = new mysqli($servername, $username, $password, $dbname);
+                 
+                $sql = "SELECT * FROM canvas where userId ='$userid'";
+                $resultado = $conn->query($sql);
 
+                    // verificamos se a nossa consulta foi executada com sucesso
+                    if($resultado !== false)
+                    {
 
-                    // Create connection
-                    $conn = new mysqli($servername, $username, $password, $dbname);
-                    // Check connection
-                    if ($conn->connect_error) {
-                        die("Connection failed: " . $conn->connect_error);
-                    }
-
-                    if($conn->query("SELECT * FROM `canvas` WHERE `userId` = '1'") === TRUE){
-                         echo '
-                            <div class="col-md-12">
+                        foreach($resultado as $row) {
+                            $titulo = $row['titulo'];
+                            $parceiro = $row['parceiros'];
+                            $atividade = $row['atividades'];
+                            $recursos = $row['recursos'];
+                            $proposta = $row['proposta'];
+                            $relacao = $row['relacao'];
+                            $canais = $row['canais'];
+                            $segmentos = $row['segmentos'];
+                            $custos = $row['custos'];
+                            $fontes = $row['fontes'];
+                            $data = $row['data'];
+                            $id = $row['id'];
+                            
+                    echo '
+                       <div class="col-md-12">
+                                <div class="row" style="padding:20px">
+                                    <div class="pull-left" style="font-size:20px; font-weight:bold">Criado em : '.$data.'</div>
+                                    <form action="" method="")>
+                                          <input type="text" value="'.$id.'" name="update" style="display:none">
+                                          <button class="btn btn-success btn-xs pull-right" style="margin-left:5px;margin-right:20px">editar</button>  
+                                    </form>
+                                    <form action="deletecanvas" method="">
+                                          <input type="text" name="deletar" value="'.$id.'" style="display:none">  
+                                          <button class="btn btn-danger btn-xs pull-right" >deletar</button>  
+                                    </form>
+                                    
+                                </div>
                                 <div class="panel panel-default">
                                 
                                     
                                 <div class="row">
                                     <div class="container">
-                                        <input type="text" id="titulo" name="titulo" placeholder="Titulo" value="$titulo" style="width: 63%; padding: 6px 19px;margin-bottom: 30px;font-size: 35px; font-size: 3.1875rem;; font-weight: 100;color: #627383; border: 0;border-bottom: 1px solid #DEE0E1;outline: 0;">
+                                        <input type="text" id="titulo" name="titulo" placeholder="Titulo" value="'.$titulo.'" style="width: 63%; padding: 6px 19px;margin-bottom: 30px;font-size: 35px; font-size: 3.1875rem;; font-weight: 100;color: #627383; border: 0;border-bottom: 1px solid #DEE0E1;outline: 0;">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -71,7 +99,7 @@
                                                 <header style="padding: 7px;">
                                                     <h3 class="board-title red">Parceiros Chave</h3>
                                                 </header>
-                                                <div class="bodycanvas2"><ul class="post-it" id="post-it-parceiros"></ul></div>
+                                                <div class="bodycanvas2"><ul class="post-it" id="post-it-parceiros">'.$parceiro.'</ul></div>
 
                                             </div>
                                             
@@ -81,14 +109,14 @@
                                                 <header style="padding: 7px;">
                                                     <h3 class="board-title" style="border-color: #DC75B0;">Atividades Chave</h3>
                                                 </header>
-                                                <div class="bodycanvas2"><ul class="post-it" id="post-it-atividades"></ul></div>
+                                                <div class="bodycanvas2"><ul class="post-it" id="post-it-atividades">'.$atividade.'</ul></div>
                                             </div>
                                              
                                             <div class="canvasColuna" style="height: 214px">
                                                 <header style="padding: 7px;">
                                                     <h3 class="board-title" style="border-color: #62B81A;">Recursos Chave</h3>
                                                 </header>
-                                                <div class="bodycanvas2" ><ul class="post-it" id="post-it-recursos"></ul></div>
+                                                <div class="bodycanvas2" ><ul class="post-it" id="post-it-recursos">'.$recursos.'</ul></div>
                                             </div>
                                              
                                         </div>
@@ -97,7 +125,7 @@
                                                 <header style="padding: 7px;">
                                                     <h3 class="board-title" style="    border-color: #FDBB45;">Proposta de Valor</h3>
                                                 </header>
-                                                <div class="bodycanvas2"><ul class="post-it" id="post-it-proposta"></ul></div>
+                                                <div class="bodycanvas2"><ul class="post-it" id="post-it-proposta">'.$proposta.'</ul></div>
                                             </div>
                                             
                                         </div>
@@ -106,14 +134,14 @@
                                                 <header style="padding: 7px;">
                                                     <h3 class="board-title" style="border-color: #FD7538;">Relação com o Cliente</h3>
                                                 </header>
-                                                <div class="bodycanvas2"><ul class="post-it" id="post-it-relacao"></ul></div>
+                                                <div class="bodycanvas2"><ul class="post-it" id="post-it-relacao"></ul>'.$relacao.'</div>
                                             </div>
                                             
                                             <div class="canvasColuna" style="height: 214px">
                                                 <header style="padding: 7px;">
                                                     <h3 class="board-title" style="border-color: #62B81A;">Canais</h3>
                                                 </header>
-                                                <div class="bodycanvas2"><ul class="post-it" id="post-it-canais"></ul></div>
+                                                <div class="bodycanvas2"><ul class="post-it" id="post-it-canais">'.$canais.'</ul></div>
                                             </div>
                                             
                                             
@@ -123,7 +151,7 @@
                                                 <header style="padding: 7px;">
                                                     <h3 class="board-title" style="    border-color: #15C88E;">Segmentos de Mercado</h3>
                                                 </header>
-                                                <div class="bodycanvas2"><ul class="post-it" id="post-it-segmentos"></ul></div>
+                                                <div class="bodycanvas2"><ul class="post-it" id="post-it-segmentos">'.$segmentos.'</ul></div>
                                             </div>
                                             
                                         </div>
@@ -136,7 +164,7 @@
                                                 <header style="padding: 7px;">
                                                     <h3 class="board-title" style="    border-color: #15C88E;">Estrutura de Custos</h3>
                                                 </header>
-                                                <div class="bodycanvas2"><ul class="post-it" id="post-it-custos"></ul></div>
+                                                <div class="bodycanvas2"><ul class="post-it" id="post-it-custos">'.$custos.'</ul></div>
                                         </div>
                                         
                                     </div>
@@ -145,7 +173,7 @@
                                                 <header style="padding: 7px;">
                                                     <h3 class="board-title" style="    border-color: #15C88E;">Fontes de Renda</h3>
                                                 </header>
-                                                <div class="bodycanvas2"><ul class="post-it" id="post-it-fontes"></ul></div>
+                                                <div class="bodycanvas2"><ul class="post-it" id="post-it-fontes">'.$fontes.'</ul></div>
                                             </div>
                                             
                                     </div>
@@ -154,20 +182,15 @@
 
  
                                 </div>
+
                             </div>';
-                            
+
                     }
+                }
                     else{
-                        echo '<div>Erro</div>';
+                        echo 'Você não tem Canvas Salvos';
                     }
-                    
-                    $conn->close(); 
-                    
-                   
-
-
-                
-             
+                 $conn->close();
                ?>
 
 

@@ -19,6 +19,15 @@ class CanvasController extends Controller
         return view('salvacanvas');
     }
 
+    public function updadecanvas(){
+
+        return view('updadecanvas');
+    }
+    public function deletecanvas(){
+
+        return view('deletecanvas');
+    }
+
 
 
 }

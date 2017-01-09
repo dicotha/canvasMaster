@@ -12,6 +12,7 @@ $segmentos = $_POST['segmentos'];
 $custos = $_POST['custos'];
 $fontes = $_POST['fontes'];
 $userid = $_POST['userid'];
+$datas = $_POST['datas'];
 
 
 
@@ -32,7 +33,7 @@ $dbname = "canvasmaster";
         die("Connection failed: " . $conn->connect_error);
     }
 
-    if($conn->query("INSERT INTO canvas(userId, titulo, parceiros, atividades, recursos, proposta,relacao,canais,segmentos,custos,fontes) VALUES ('$userid','$titulo','$parceiro','$atividade','$recursos','$proposta','$relacao','$canais','$segmentos','$custos','$fontes');") === TRUE){
+    if($conn->query("INSERT INTO canvas(userId, titulo, parceiros, atividades, recursos, proposta,relacao,canais,segmentos,custos,fontes,data) VALUES ('$userid','$titulo','$parceiro','$atividade','$recursos','$proposta','$relacao','$canais','$segmentos','$custos','$fontes', '$datas');") === TRUE){
         echo '<div style="
                 font-size: 24px;
                 font-weight: bold;

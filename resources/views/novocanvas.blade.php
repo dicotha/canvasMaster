@@ -490,6 +490,12 @@ $(".btn-success").click(function(){
     $("#txtfontes #cont").remove();
     $("#txtfontes").prepend(fontes);
 
+
+
+    dayName = new Array ("Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado")
+    monName = new Array ("janeiro", "fevereiro", "março", "abril", "maio", "junho", "agosto", "outubro", "novembro", "dezembro")
+    now = new Date
+    datas = dayName[now.getDay() ] + ", " + now.getDate () + " de " + monName [now.getMonth() ]   +  " de "  +     now.getFullYear ();
     
             //var dados = jQuery('#enviaFormulario').serialize();
             var formData = {
@@ -503,14 +509,15 @@ $(".btn-success").click(function(){
             'segmentos'            : $('#txtsegmentos').html(),
             'custos'            : $('#txtcustos').html(),
             'fontes'            : $('#txtfontes').html(),
-            'userid'            : {{ Auth::user()->id }}
+            'userid'            : {{ Auth::user()->id }},
+            'datas'              : datas
         };
             $.ajax({
                 type: 'POST',
                 url: "{{ url('/canvas/salvacanvas.php') }}",
                 data: formData,
                 success: function(data){
-                   alert(data);
+                  window.location.href = "{{ url('/home') }}";
                    
                 },
                 
